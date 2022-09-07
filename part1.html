@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Test technique</h1>
+    <p>Par Bryan Kasteller</p>
+    <p>Vous pouvez tester les méthodes directement dans la console</p>
+
+    <h2>Partie 1</h2>
+
+    <h3>1. reverseString(str)</h3>
+    <p>exemple : reverseString('canard')</p>
+
+    <h3>2. isPalindrome(str)</h3>
+    <p>exemple : isPalindrome('kayak')</p>
+
+    <h3>3. printMostComChar(str)</h3>
+    <p>exemple : printMostComChar('le chateau dans le ciel')</p>
+
+    <h3>4. countVowels(str)</h3>
+    <p>exemple : countVowels('bryan kasteller')</p>
+
+    <h3>5. checkAnagrams(str1, str2)</h3>
+    <p>exemple : checkAnagrams('bac', 'bca')</p>
+
+    <script type="text/javascript">
+        function reverseString (str) {
+            return str.split('').reverse().join('')
+        }
+
+        function isPalindrome (str) {
+            for (let i = 0; i < str.length / 2; i++) {
+               if (str[i] !== str[str.length - 1 - i]) {
+                   return false;
+               }
+           }
+            return true
+        }
+
+        function printMostComChar (str) {
+            var max = 0,
+                maxChar = ''
+
+            str.split('').forEach((char) => {
+                if (str.split(char).length > max) {
+                    max = str.split(char).length;
+                    maxChar = char;
+                }
+            })
+
+            return maxChar;
+        }
+
+        function countVowels (str) {
+            return str.match(/[aeiou]/gi).length
+        }
+
+        function checkAnagrams (str1, str2) {
+            let sort = function (str) {
+                return str.split('').sort().join('')
+            }
+            return sort(str1) === sort(str2)
+        }
+    </script>
+</body>
+</html>
